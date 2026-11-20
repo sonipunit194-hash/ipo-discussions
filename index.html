@@ -230,7 +230,9 @@ function renderIPO(){
   document.getElementById("ipoTable").innerHTML=
   `<tr><td colspan="8" class="empty">No IPO data available. Add verified IPO information to the data section.</td></tr>`;
  }
-
+const ipoData = window.ipoData || [];
+const buybackData = window.buybackData || [];
+const lockinData = window.lockinData || [];
  document.getElementById("upcomingCount").textContent=ipoData.filter(x=>x.status==="Upcoming").length;
  document.getElementById("openCount").textContent=ipoData.filter(x=>x.status==="Open").length;
  document.getElementById("closedCount").textContent=ipoData.filter(x=>x.status==="Closed").length;
