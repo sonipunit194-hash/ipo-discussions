@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPO Discussions | IPO & Stock Market Updates</title>
+<meta name="description" content="IPO Discussions - IPO updates, IPO calendar, buybacks, open offers, lock-in expiry and corporate actions.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f4f7fb;color:#152238}
+header{background:#101d33;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.logo{font-size:24px;font-weight:800;color:#ff9d28}
+.logo span{color:white}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#e8edf6;text-decoration:none;font-size:14px}
+.hero{background:linear-gradient(120deg,#101d33,#203c62);color:white;padding:55px 6%}
+.hero h1{font-size:38px;margin-bottom:12px}
+.hero p{color:#c8d5e8;line-height:1.7}
+.search{margin-top:24px;display:flex;gap:8px;max-width:500px}
+.search input{flex:1;padding:13px;border-radius:8px;border:0}
+.search button{background:#ff9d28;color:#17243b;border:0;padding:12px 18px;border-radius:8px;font-weight:bold}
+.container{padding:30px 6%;max-width:1250px;margin:auto}
+.section-title{font-size:24px;margin-bottom:18px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px}
+.card{background:white;padding:20px;border-radius:12px;border:1px solid #e4eaf2}
+.card h3{font-size:17px;margin-bottom:9px}
+.card p{color:#64748b;font-size:13px;line-height:1.5}
+.tag{display:inline-block;background:#fff3df;color:#a65d00;padding:5px 9px;border-radius:20px;font-size:12px;margin-bottom:10px}
+.panel{background:white;border:1px solid #e4eaf2;border-radius:12px;padding:20px;margin-top:28px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:600px}
+th,td{text-align:left;padding:13px;border-bottom:1px solid #edf1f6;font-size:14px}
+th{color:#66748a;background:#f8fafc}
+.status{color:#16834b;font-weight:bold}
+.notice{color:#758197;font-size:12px;margin-top:12px}
+footer{background:#101d33;color:#d4deed;padding:28px 6%;margin-top:40px}
+footer p{margin:8px 0;font-size:13px;line-height:1.6}
+@media(max-width:600px){
+.hero h1{font-size:29px}
+header{padding:16px 5%}
+nav{gap:12px}
+.container{padding:24px 5%}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">IPO <span>DISCUSSIONS</span></div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#ipos">IPO</a>
+    <a href="#buyback">Buyback</a>
+    <a href="#lockin">Lock-in</a>
+    <a href="#news">News</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Indian IPO & Market Events</h1>
+  <p>Explore IPO updates, important dates, buybacks, lock-in expiries and corporate actions — all in one place.</p>
+  <div class="search">
+    <input type="text" placeholder="Search IPO or company name..." id="searchBox">
+    <button onclick="searchSite()">Search</button>
+  </div>
+</section>
+
+<main class="container">
+  <h2 class="section-title">Market Events</h2>
+  <div class="cards">
+    <div class="card"><span class="tag">IPO</span><h3>Upcoming IPOs</h3><p>Explore companies preparing to launch their IPO.</p></div>
+    <div class="card"><span class="tag">LIVE UPDATES</span><h3>Open IPOs</h3><p>Track IPOs currently open for subscription.</p></div>
+    <div class="card"><span class="tag">MARKET</span><h3>Listing Updates</h3><p>Listing dates and market debut information.</p></div>
+    <div class="card"><span class="tag">CORPORATE</span><h3>Buybacks</h3><p>Buyback announcements and key dates.</p></div>
+    <div class="card"><span class="tag">CALENDAR</span><h3>Lock-in Expiry</h3><p>Track upcoming share lock-in expiry events.</p></div>
+    <div class="card"><span class="tag">OFFERS</span><h3>Open Offers</h3><p>Company open offer announcements and timelines.</p></div>
+  </div>
+
+  <section class="panel" id="ipos">
+    <h2 class="section-title">IPO Calendar</h2>
+    <table>
+      <thead><tr><th>Company</th><th>Type</th><th>Opening</th><th>Closing</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>IPO updates coming soon</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+    <p class="notice">IPO data will be updated after verification from official sources.</p>
+  </section>
+
+  <section class="panel" id="buyback">
+    <h2 class="section-title">Latest Buybacks</h2>
+    <p>Buyback information and upcoming dates will be listed here.</p>
+  </section>
+
+  <section class="panel" id="lockin">
+    <h2 class="section-title">Lock-in Expiry Calendar</h2>
+    <p>Upcoming share lock-in expiry information will be listed here.</p>
+  </section>
+
+  <section class="panel" id="news">
+    <h2 class="section-title">Latest Market Updates</h2>
+    <p>IPO and corporate announcements will appear here.</p>
+  </section>
+</main>
+
+<footer>
+  <h3>IPO Discussions</h3>
+  <p>Independent informational platform covering IPOs and Indian stock market corporate events.</p>
+  <p>Disclaimer: Information is for educational purposes only and is not investment advice.</p>
+  <p>© 2026 IPO Discussions</p>
+</footer>
+
+<script>
+function searchSite(){
+ const q=document.getElementById('searchBox').value.trim();
+ if(!q){alert('Please enter a company or IPO name.');return;}
+ alert('Search feature will be enabled as the website is developed. Search: '+q);
+}
+</script>
+</body>
+</html>
