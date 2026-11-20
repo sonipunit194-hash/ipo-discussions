@@ -1,5 +1,5 @@
-const ipoData = [];
+window.ipoData = [];
 
-const buybackData = [];
+window.buybackData = [];
 
-const lockinData = [];
+window.lockinData = [];
