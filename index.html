@@ -1,69 +1,88 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IPO Discussions - IPO Dashboard</title>
+<title>IPO Discussions | Indian IPO Market</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f3f6fb;color:#17243a}
+body{font-family:Arial,sans-serif;background:#f3f6fc;color:#17243a}
 header{background:#101d33;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-.logo{font-size:24px;font-weight:800}.logo span{color:#ff9c35}
+.logo{font-size:25px;font-weight:800}
+.logo span{color:#ff9e2c}
 nav{display:flex;gap:18px;flex-wrap:wrap}
 nav a{color:white;text-decoration:none;font-size:14px}
-.hero{background:linear-gradient(120deg,#101d33,#23446f);color:white;padding:48px 6%}
-.hero h1{font-size:34px;margin-bottom:12px}
-.hero p{color:#c8d5e7;line-height:1.7}
-.container{max-width:1250px;margin:auto;padding:28px 18px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.stat{background:white;border:1px solid #e1e8f0;padding:20px;border-radius:12px}
-.stat small{color:#6b7a8d}.stat h2{margin-top:10px;font-size:27px;color:#17243a}
-.panel{background:white;border:1px solid #e1e8f0;border-radius:12px;padding:22px;margin-top:25px}
-.panel h2{font-size:23px;margin-bottom:18px}
-.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}
-.filter{padding:10px 17px;border:1px solid #dbe3ed;border-radius:8px;background:#fff;cursor:pointer;font-weight:600;color:#435268}
-.filter.active{background:#152742;color:white;border-color:#152742}
-.searchrow{display:flex;gap:10px;margin-bottom:18px}
-.searchrow input{width:100%;padding:13px;border:1px solid #dbe3ed;border-radius:8px;font-size:15px}
-.tablewrap{overflow-x:auto}
-table{border-collapse:collapse;width:100%;min-width:780px}
-th,td{text-align:left;padding:14px;border-bottom:1px solid #edf1f5;font-size:14px}
-th{background:#f6f8fb;color:#526174}
-.badge{display:inline-block;padding:6px 10px;border-radius:20px;background:#fff3d6;color:#8a6415;font-size:12px}
-.empty{text-align:center;padding:30px;color:#718096}
-.disclaimer{background:#fff8e9;border:1px solid #ffe2ae;padding:14px;border-radius:9px;margin-top:20px;color:#76521b;font-size:13px;line-height:1.7}
-footer{background:#101d33;color:#cbd5e3;text-align:center;padding:26px;margin-top:30px;font-size:13px;line-height:1.8}
-@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:27px}.panel{padding:15px}header{padding:16px 5%}}
+.hero{background:linear-gradient(120deg,#10203b,#244571);color:white;padding:55px 6%}
+.hero h1{font-size:36px;margin-bottom:15px}
+.hero p{color:#c9d5e8;line-height:1.7}
+.container{max-width:1250px;margin:auto;padding:28px 20px}
+.section-title{font-size:25px;margin-bottom:20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.card{background:white;padding:22px;border-radius:14px;border:1px solid #e1e7f0}
+.card small{color:#718096}
+.card h2{font-size:28px;margin-top:10px}
+.orange{color:#f59a23}
+.panel{background:white;border:1px solid #e1e7f0;border-radius:14px;padding:22px;margin-top:24px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.filter{padding:10px 16px;border:1px solid #d9e1ec;border-radius:8px;background:#fff;cursor:pointer}
+.filter.active{background:#14243c;color:white}
+input,select{padding:12px;border:1px solid #d8e0ec;border-radius:8px;font-size:15px;width:100%;margin:6px 0}
+table{border-collapse:collapse;width:100%;min-width:850px}
+th,td{text-align:left;padding:14px;border-bottom:1px solid #e9edf3;font-size:14px}
+th{background:#f4f7fb;color:#56647a}
+.table-wrap{overflow-x:auto}
+.status{padding:5px 9px;border-radius:20px;background:#eef3ff;color:#3159a5;font-size:12px}
+.empty{text-align:center;padding:32px;color:#78869a}
+.btn{background:#f59a23;color:#15233a;border:0;border-radius:8px;padding:12px 18px;font-weight:bold;cursor:pointer}
+.calculator{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.result{background:#14243c;color:white;border-radius:12px;padding:22px;margin-top:16px}
+.result h2{color:#ffad3c;margin:8px 0}
+footer{text-align:center;background:#101d33;color:#cbd5e1;padding:28px;margin-top:35px}
+.note{font-size:13px;color:#718096;line-height:1.7;margin-top:12px}
+@media(max-width:600px){
+ header{padding:16px 5%}
+ .hero{padding:35px 5%}
+ .hero h1{font-size:28px}
+ .container{padding:22px 14px}
+ .panel{padding:16px}
+ nav{gap:12px}
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="logo"><span>IPO</span> DISCUSSIONS</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="#dashboard">IPO Dashboard</a>
-<a href="#buyback">Buyback</a>
-<a href="#lockin">Lock-in</a>
-<a href="#news">News</a>
-</nav>
+  <div class="logo"><span>IPO</span> DISCUSSIONS</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#dashboard">IPO Dashboard</a>
+    <a href="#calculator">Calculator</a>
+    <a href="#buyback">Buyback</a>
+    <a href="#lockin">Lock-in</a>
+  </nav>
 </header>
 
-<section class="hero">
-<h1>IPO Dashboard</h1>
-<p>Explore upcoming IPOs, currently open issues, closed IPOs and listing updates in one place.</p>
+<section class="hero" id="home">
+  <h1>Indian IPO & Market Events</h1>
+  <p>IPO updates, market dates, listing information, buybacks and corporate events — all in one place.</p>
 </section>
 
-<main class="container" id="dashboard">
+<main class="container">
 
-<div class="stats">
-<div class="stat"><small>Upcoming IPOs</small><h2 id="upcomingCount">0</h2></div>
-<div class="stat"><small>Open IPOs</small><h2 id="openCount">0</h2></div>
-<div class="stat"><small>Closed IPOs</small><h2 id="closedCount">0</h2></div>
-<div class="stat"><small>Listed IPOs</small><h2 id="listedCount">0</h2></div>
+<section id="dashboard">
+<h2 class="section-title">IPO Market Dashboard</h2>
+
+<div class="cards">
+  <div class="card"><small>Upcoming IPOs</small><h2 id="upcomingCount">0</h2></div>
+  <div class="card"><small>Open IPOs</small><h2 id="openCount">0</h2></div>
+  <div class="card"><small>Closed IPOs</small><h2 id="closedCount">0</h2></div>
+  <div class="card"><small>Listed IPOs</small><h2 id="listedCount">0</h2></div>
 </div>
 
-<section class="panel">
+<div class="panel">
 <h2>IPO Market Tracker</h2>
 
 <div class="filters">
@@ -74,43 +93,108 @@ footer{background:#101d33;color:#cbd5e3;text-align:center;padding:26px;margin-to
 <button class="filter" onclick="setFilter('Listed',this)">Listed</button>
 </div>
 
-<div class="searchrow">
-<input id="search" type="search" placeholder="Search company name..." oninput="render()">
-</div>
+<input id="search" placeholder="Search company name..." oninput="renderIPO()">
 
-<div class="tablewrap">
+<div class="table-wrap">
 <table>
 <thead>
 <tr>
 <th>Company</th>
-<th>IPO Type</th>
+<th>Type</th>
 <th>Price Band</th>
-<th>Open Date</th>
-<th>Close Date</th>
+<th>GMP</th>
+<th>Open</th>
+<th>Close</th>
+<th>Listing</th>
 <th>Status</th>
 </tr>
 </thead>
-<tbody id="ipoRows"></tbody>
+<tbody id="ipoTable"></tbody>
 </table>
+</div>
 </div>
 </section>
 
-<div class="disclaimer">
-<strong>Important:</strong> This is an informational IPO tracker. Dates, prices and status must be verified using official exchange and company announcements. This website does not provide investment advice.
+<section class="panel" id="calculator">
+<h2 class="section-title">IPO Listing Gain Calculator</h2>
+<p>Calculate estimated profit or loss using your IPO issue price and expected listing price.</p>
+
+<div class="calculator">
+<div><label>Issue Price (₹)</label><input type="number" id="issuePrice" placeholder="Example: 100"></div>
+<div><label>Expected Listing Price (₹)</label><input type="number" id="listingPrice" placeholder="Example: 125"></div>
+<div><label>Shares per Lot</label><input type="number" id="lotSize" placeholder="Example: 50"></div>
+<div><label>Number of Lots</label><input type="number" id="lots" value="1" min="1"></div>
 </div>
+
+<button class="btn" onclick="calculateGain()">Calculate Profit / Loss</button>
+
+<div class="result" id="calcResult">
+Enter values above to calculate your estimated IPO listing profit or loss.
+</div>
+</section>
+
+<section class="panel" id="buyback">
+<h2 class="section-title">Buyback Tracker</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Company</th><th>Buyback Price</th><th>Record Date</th><th>Closing Date</th><th>Status</th></tr></thead>
+<tbody id="buybackTable"></tbody>
+</table>
+</div>
+<div class="empty" id="buybackEmpty">Buyback announcements will appear here when data is added.</div>
+</section>
+
+<section class="panel" id="lockin">
+<h2 class="section-title">Share Lock-in Expiry Tracker</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Company</th><th>Shares Unlocking</th><th>Unlock Date</th><th>Category</th></tr></thead>
+<tbody id="lockinTable"></tbody>
+</table>
+</div>
+<div class="empty" id="lockinEmpty">Upcoming lock-in expiry details will appear here when data is added.</div>
+</section>
+
+<p class="note">
+Disclaimer: Information on this website is for educational and informational purposes only.
+Verify IPO dates, prices, GMP and corporate announcements from official sources before making decisions.
+GMP is unofficial and is not a guaranteed listing price.
+</p>
 
 </main>
 
 <footer>
 <strong>IPO DISCUSSIONS</strong><br>
-Indian IPO & Market Information Portal<br>
-Information is for educational purposes only.
+Indian IPO & Stock Market Information Portal
 </footer>
 
 <script>
+
+// ======================================
+// IPO DATA
+// Add verified IPO details inside this list.
+// Do not enter unverified market information.
+// ======================================
+
 const ipoData = [
-/* Add verified IPO data here later */
+/*
+Example format (replace with verified data):
+
+{
+ company: "Company Name",
+ type: "Mainboard",
+ price: "₹100–₹110",
+ gmp: "₹15",
+ open: "2026-12-01",
+ close: "2026-12-03",
+ listing: "2026-12-08",
+ status: "Upcoming"
+}
+*/
 ];
+
+const buybackData = [];
+const lockinData = [];
 
 let currentFilter = "All";
 
@@ -118,34 +202,85 @@ function setFilter(filter,button){
  currentFilter=filter;
  document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
  button.classList.add("active");
- render();
+ renderIPO();
 }
 
-function render(){
- const query=document.getElementById("search").value.toLowerCase();
- const filtered=ipoData.filter(item=>{
-  const matchesFilter=currentFilter==="All"||item.status===currentFilter;
-  const matchesSearch=item.company.toLowerCase().includes(query);
+function renderIPO(){
+ const search=document.getElementById("search").value.toLowerCase();
+ const filtered=ipoData.filter(ipo=>{
+  const matchesFilter=currentFilter==="All"||ipo.status===currentFilter;
+  const matchesSearch=ipo.company.toLowerCase().includes(search);
   return matchesFilter&&matchesSearch;
  });
 
- document.getElementById("ipoRows").innerHTML=filtered.length
- ?filtered.map(item=>`<tr>
- <td><strong>${item.company}</strong></td>
- <td>${item.type}</td>
- <td>${item.price}</td>
- <td>${item.open}</td>
- <td>${item.close}</td>
- <td><span class="badge">${item.status}</span></td>
- </tr>`).join("")
- :`<tr><td colspan="6" class="empty">No IPO data available yet.</td></tr>`;
+ document.getElementById("ipoTable").innerHTML=filtered.map(ipo=>`
+ <tr>
+ <td><strong>${ipo.company}</strong></td>
+ <td>${ipo.type||"-"}</td>
+ <td>${ipo.price||"-"}</td>
+ <td>${ipo.gmp||"-"}</td>
+ <td>${ipo.open||"-"}</td>
+ <td>${ipo.close||"-"}</td>
+ <td>${ipo.listing||"-"}</td>
+ <td><span class="status">${ipo.status||"-"}</span></td>
+ </tr>
+ `).join("");
+
+ if(filtered.length===0){
+  document.getElementById("ipoTable").innerHTML=
+  `<tr><td colspan="8" class="empty">No IPO data available. Add verified IPO information to the data section.</td></tr>`;
+ }
 
  document.getElementById("upcomingCount").textContent=ipoData.filter(x=>x.status==="Upcoming").length;
  document.getElementById("openCount").textContent=ipoData.filter(x=>x.status==="Open").length;
  document.getElementById("closedCount").textContent=ipoData.filter(x=>x.status==="Closed").length;
  document.getElementById("listedCount").textContent=ipoData.filter(x=>x.status==="Listed").length;
 }
-render();
+
+function calculateGain(){
+ const issue=Number(document.getElementById("issuePrice").value);
+ const listing=Number(document.getElementById("listingPrice").value);
+ const shares=Number(document.getElementById("lotSize").value);
+ const lots=Number(document.getElementById("lots").value);
+
+ if(!issue||!listing||!shares||!lots){
+  document.getElementById("calcResult").innerHTML="Please enter all values correctly.";
+  return;
+ }
+
+ const invested=issue*shares*lots;
+ const listingValue=listing*shares*lots;
+ const profit=listingValue-invested;
+ const percent=(profit/invested)*100;
+
+ document.getElementById("calcResult").innerHTML=`
+ <p>Investment: ₹${invested.toLocaleString("en-IN")}</p>
+ <p>Estimated Listing Value: ₹${listingValue.toLocaleString("en-IN")}</p>
+ <h2>${profit>=0?"Estimated Profit":"Estimated Loss"}: ₹${Math.abs(profit).toLocaleString("en-IN")}</h2>
+ <p>${percent.toFixed(2)}% estimated return</p>
+ <small>Excludes taxes, brokerage and other charges.</small>
+ `;
+}
+
+function renderBuybacks(){
+ document.getElementById("buybackTable").innerHTML=buybackData.map(x=>`
+ <tr><td>${x.company}</td><td>${x.price||"-"}</td><td>${x.record||"-"}</td><td>${x.close||"-"}</td><td>${x.status||"-"}</td></tr>
+ `).join("");
+ document.getElementById("buybackEmpty").style.display=buybackData.length?"none":"block";
+}
+
+function renderLockins(){
+ document.getElementById("lockinTable").innerHTML=lockinData.map(x=>`
+ <tr><td>${x.company}</td><td>${x.shares||"-"}</td><td>${x.date||"-"}</td><td>${x.category||"-"}</td></tr>
+ `).join("");
+ document.getElementById("lockinEmpty").style.display=lockinData.length?"none":"block";
+}
+
+renderIPO();
+renderBuybacks();
+renderLockins();
+
 </script>
 </body>
 </html>
+
