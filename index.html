@@ -11,6 +11,19 @@
 body{font-family:Arial,sans-serif;background:#f3f6fc;color:#17243a}
 header{background:#101d33;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
 .logo{font-size:25px;font-weight:800}
+ .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
 .logo span{color:#ff9e2c}
 nav{display:flex;gap:18px;flex-wrap:wrap}
 nav a{color:white;text-decoration:none;font-size:14px}
@@ -49,13 +62,27 @@ footer{text-align:center;background:#101d33;color:#cbd5e1;padding:28px;margin-to
  .panel{padding:16px}
  nav{gap:12px}
 }
+ .hero-banner {
+  display: block;
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  margin: 0 auto 25px;
+  border-radius: 14px;
+ }
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo"><span>IPO</span> DISCUSSIONS</div>
+  <div class="logo">
+  <img
+    src="/file_00000000386881fa9a7f793087377043.png"
+    alt="IPO Discussions Logo"
+  >
+  IPO DISCUSSIONS
+  </div>
   <nav>
     <a href="#home">Home</a>
     <a href="#dashboard">IPO Dashboard</a>
@@ -66,6 +93,11 @@ footer{text-align:center;background:#101d33;color:#cbd5e1;padding:28px;margin-to
 </header>
 
 <section class="hero" id="home">
+ <img
+  class="hero-banner"
+  src="/file_00000000893c81f5b5525d8fcd15f223.png"
+  alt="IPO Discussions Banner"
+>
   <h1>Indian IPO & Market Events</h1>
   <p>IPO updates, market dates, listing information, buybacks and corporate events — all in one place.</p>
 </section>
